@@ -1,0 +1,7 @@
+print("Content-Type: text/html")
+print()
+print("<html>")
+print("<p>Hello from</p>")
+print("<p>the other</p>")
+print("<p>SIDE....</p>")
+print("</html>")

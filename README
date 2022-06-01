@@ -1,0 +1,21 @@
+Read this before evaluting the program please-->
+The variable names are mostly in snake case, this is not in accordance with the PEP-8 standards. It was just done for the convenience of the programmer.
+Some variable names are abbreviated which may cause some confusion when reading through the program, specifically:
+
+fileExe:variable created if its a cgi program, path to the cgi file without the "/cgibin"
+fileSend:variable created if its a static file, path to static file
+rfd,wfd:read and write file descriptors from os.pipe
+newEnv:dictionary of os.environ and other cgi environmental variables
+statFile:path to static files
+cgiBin:path to cgi executables
+port: port server is listening to
+execPath:command/executable path to be used in the exec 
+
+If its a cgi program the default content type is taken as html if not given in the cgiBody
+
+Limitations-->
+1.Can not handle concurrent request, this would be implemented by forking every connection we accept and handling the request in the child while the parent is available for another request. This caused a myriad of other problems from the cgi program returning errors and the server socket being in use by the same program
+
+2.All test require 2 terminals open one for running the server and another for the bash scripts
+Therefore when testing, keep one terminal with [ python webserv.py config.cfg ] open and run all the .sh scripts on another terminal. Note the config requires you to add the faulty config files as arguments when running the servers eg.[ python webserv.py config_arg_miss.cfg > ./mytests/temp ]
+

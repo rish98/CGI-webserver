@@ -1,0 +1,6 @@
+print("Status-Code: 420 My Header")
+print("<html>")
+print("<p>Hello from</p>")
+print("<p>the other</p>")
+print("<p>SIDE....</p>")
+print("</html>")
